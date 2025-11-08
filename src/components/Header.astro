@@ -1,0 +1,100 @@
+---
+import Index from "../pages/index.astro";
+import Icon from "./Icon.astro";
+
+const navLinks = [
+    { title: "Servicios", href: "/servicios" },
+    { title: "Proyectos", href: "/proyectos" },
+    { title: "Contacto", href: "/contacto" },
+];
+
+const socialLinks = [
+    { title: "Instagram", href: "https://instagram.com", icon:"instagram" },
+    { title: "Linked-in", href: "https://linkedin.com", icon: "linkedin" },
+    { title: "Whatsapp", href: "https://wa.me/5491170650327?text=Me%20gustaría%20consultar...", icon: "whatsapp" },
+]
+
+---
+
+<header class="main-header">
+    <a href="/" class="logo"><img src="/src/assets/CX.svg" alt="Logo Contenidx"></a>
+        <nav class="primary-nav">
+            <ul>
+                {navLinks.map(link => (
+                    <li><a href={link.href}>{link.title}</a></li>
+                ))}
+                <li><a href="/outsourcing" class="outsourcing-link">Outsourcing <i class="material-symbols-outlined">personal_injury</i></a></li>
+            </ul>
+            <ul>
+                {socialLinks.map(({href, icon }) => (
+                    <li>
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                            <Icon name={icon} />
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+</header>
+<style>
+    .primary-nav a {
+        font-family: 'Inter', sans-serif;
+        color: #fff;
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        transition: all .3s ease-in-out;
+    }
+
+    @media(hover:hover) {
+        .primary-nav a:hover{
+            background-color: #ffffff33;
+        }
+    }
+    
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #1584C2;
+    }
+
+    .primary-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary-nav ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .primary-nav ul li a {
+        text-decoration: none;
+    }
+
+    .outsourcing-link {
+        background: black;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-self: start;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+    }
+
+    @media(hover:hover) {
+        .outsourcing-link:hover{
+            background: linear-gradient(30deg, #CC29C2, #303030);
+        }
+    }
+
+    .navegador {
+        display: flex;
+    }
+</style>

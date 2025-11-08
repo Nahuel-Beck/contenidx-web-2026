@@ -1,0 +1,20 @@
+---
+import { icon } from '@fortawesome/fontawesome-svg-core';
+import {
+    faInstagram,
+    faLinkedinIn,
+    faWhatsapp
+} from '@fortawesome/free-brands-svg-icons';
+
+const icons = {
+    instagram: faInstagram,
+    linkedin: faLinkedinIn,
+    whatsapp: faWhatsapp
+};
+
+const { name } = Astro.props as { name: keyof typeof icons };
+const selectedIcon = icons[name];
+const svg = selectedIcon ? icon(selectedIcon).html[0] : null;
+---
+
+{svg && <span class="icon" set:html={svg} />}
