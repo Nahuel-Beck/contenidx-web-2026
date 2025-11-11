@@ -1,13 +1,39 @@
 /* Importación de los íconos de Google Fonts */
 @import "material-symbols/index.css";
 
+html,
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
 :root {
     --font-inter: "Inter", system-ui, sans-serif; 
+    --font-rubik: "Rubik", system-ui, sans-serif;
+
+    --color-negro: #2D2D2D;
+    --color-azul: #1584C2;
+    --color-azul-oscuro: #1172A8;
+    --color-azul-btn-hover: #1583c233;
+    --color-blanco-gris: #F2F2F2;
+    --color-violeta: #D02AB1;
+    --color-negro-oscuro: #1E1E1E;
+    --color-gris: #5F5F5F;
+    --degradado-viol-negro: linear-gradient(35deg, #CC29C2, #303030);
+    --degradado-viol-rojo: linear-gradient(35deg, #CC29C2, #E62D31);
+    --degradado-btn: linear-gradient(35deg, #1584C2, #0A3F5C);
 }
 
 h1 {
     font-family: var(--font-inter);
     font-weight: 200;
+}
+
+h4 {
+    font-family: var(--font-inter);
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 .social-nav ul {
@@ -20,15 +46,13 @@ h1 {
 }
 
 .icon {
-    color: #fff;
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: auto;
+    height: 20px;
 }
 
 .icon svg {
     width: 100%;
     height: 100%;
-    fill: white;
     transition: fill 0.3s ease;
 }

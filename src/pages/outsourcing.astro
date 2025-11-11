@@ -1,0 +1,21 @@
+---
+// import type { text } from "@fortawesome/fontawesome-svg-core"
+import Layout from "../layouts/Layout.astro"
+import Buttons from "../components/Buttons.astro"
+import "../styles/global.css";
+
+const panel = { text: "Panel", href: "https://panel.contenidx.com.ar/", variant:"secondary", iconName:"open_in_new", target:"_blank" };
+---
+
+<Layout title="Outsourcing">
+    <main>
+        <h2>Outsourcing</h2>
+        <Buttons {...(panel as any)} />
+    </main>
+</Layout>
+
+<style>
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+</style>

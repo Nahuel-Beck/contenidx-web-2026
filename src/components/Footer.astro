@@ -1,0 +1,186 @@
+---
+import "../styles/global.css";
+import Icon from "./Icon.astro";
+
+
+const textFooter = "Diseñamos para la intuición, desarrollamos para la acción.";
+const navLinks = [
+    { title: "Servicios", href: "/servicios" },
+    { title: "Proyectos", href: "/proyectos" },
+    { title: "Contacto", href: "/contacto" },
+    { title: "Outsourcing", href: "/outsourcing" },
+];
+
+const socialLinks = [
+    { title: "Instagram", href: "https://www.instagram.com/contenidx/", icon:"instagram" },
+    { title: "Linked-in", href: "https://www.linkedin.com/company/dise%C3%B1oydesarrolloweb", icon: "linkedin" },
+    { title: "Whatsapp", href: "https://wa.me/5491170650327?text=Me%20gustaría%20consultar...", icon: "whatsapp" },
+]
+---
+<section>
+    <div class="content">
+        <div class="block-1">
+            <h4 class="text-footer">{textFooter}</h4>
+            <div>
+                <img src="/src/assets/cx-iso-description.svg" alt="Marca isologo contenidx">
+                <p>© 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        <div class="block-2">
+            <nav class="footer-nav">
+                <ul>
+                    {navLinks.map(link => (
+                        <li><a href={link.href}>{link.title}</a></li>
+                    ))}
+                </ul>
+            </nav>
+            <nav class="footer-nav-social-qr">
+                <ul>
+                    {socialLinks.map(({href, icon }) => (
+                        <li>
+                            <a href={href} target="_blank" rel="noopener noreferrer">
+                                <Icon name={icon} class="icon"/>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <img src="/src/assets/qr-ficticio.png" alt="qr de data fiscal">
+            </nav>
+        </div>
+    </div>
+</section>
+
+<style>
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+
+    section {
+        background-color: var(--color-negro);
+        color: white;
+        margin-top: 2rem;
+    }
+
+    .content {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        justify-content: space-between;
+        padding: 3rem 4rem;
+        background: url('/src/assets/bg-footer.png') no-repeat;
+        background-position: right;
+    }
+
+    .text-footer {
+        font-size: 1.25rem;
+        font-weight: 100;
+        flex-direction: column;
+    }
+
+    .block-1 p {
+        color: #575757;
+    }
+
+    .primary-nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .primary-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .block-1 {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+    }
+
+    .block-1 > div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+    }
+
+    .block-1 > div img {
+        height: 40px;
+    }
+
+    .block-2 {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .footer-nav {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .footer-nav ul {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        list-style: none;
+        text-decoration: none;
+        gap: 1rem;
+    }
+
+    .footer-nav a {
+        display: inline-block;
+        /* color: var(--color-blanco-gris); */
+        color: #575757;
+        text-decoration: none;
+        transition: all .1s ease-in-out;
+    }
+
+    @media (hover:hover) {
+        .footer-nav a:hover {
+            color: var(--color-azul);
+            transform: translateX(5px);
+        }
+    }
+
+    .footer-nav-social-qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-nav-social-qr ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: start;
+        list-style: none;
+        text-decoration: none;
+        gap: 1rem;
+    }
+
+    .footer-nav-social-qr a {
+        display: inline-block;
+        color: #575757;
+        transition: all .1s ease-in-out;
+    }
+
+    @media (hover:hover) {
+        .footer-nav-social-qr a:hover {
+            color: var(--color-azul);
+            transform: scale(1.2);
+        }
+    }
+</style>
