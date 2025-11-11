@@ -1,0 +1,74 @@
+---
+import PreHeadline from "./PreHeadline.astro";
+import Buttons from "./Buttons.astro";
+
+
+const preHeadline = "Soluciones estratégicas digitales enfocadas en diseño ux y análisis seo"
+const title = "Impulsamos la evolución digital de su institución con plataformas web confiables y seguras";
+const description = "Generamos soluciones a medida que garantizan accesibilidad, calidad y una experiencia de usuario eficiente para sus clientes y ciudadanos.";
+---
+
+<section>
+    <div class="contenido">
+        <PreHeadline text={preHeadline} />
+        <h1 class="main-title">{title}</h1>
+        <p class="main-description">{description}</p>
+        <div class="actions">
+            <Buttons href="/contacto" text="Iniciar proyecto" variant="primary" iconName="" />
+            <Buttons href="/proyectos" text="Ver proyectos" variant="secondary" iconName="arrow_forward" />
+        </div>
+    </div>
+    <div class="ilustration">
+    </div>
+</section>
+
+<style>
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* margin: 2rem 0rem; */
+        padding: 6rem 2rem;
+        min-height: 80vh;
+        background: url('/src/assets/hero-ilustration.png') no-repeat center;
+        background-size: contain;
+        background-position: right;
+        background-color: #F4F4F4;
+    }
+    
+    .contenido {
+        flex-basis: 50%;
+        padding-right: 3rem;
+    }
+    
+    .ilustration {
+        position: relative;
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: -2px;
+        line-height: 1.1;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .main-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+
+    .actions {
+        display: flex;
+        gap: 1.5rem;
+    }
+</style>

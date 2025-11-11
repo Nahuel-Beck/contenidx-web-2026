@@ -1,6 +1,8 @@
 ---
 import Index from "../pages/index.astro";
 import Icon from "./Icon.astro";
+import cxLogo from '../assets/CX.svg';
+
 
 const navLinks = [
     { title: "Servicios", href: "/servicios" },
@@ -9,21 +11,21 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { title: "Instagram", href: "https://instagram.com", icon:"instagram" },
-    { title: "Linked-in", href: "https://linkedin.com", icon: "linkedin" },
+    { title: "Instagram", href: "https://www.instagram.com/contenidx/", icon:"instagram" },
+    { title: "Linked-in", href: "https://www.linkedin.com/company/dise%C3%B1oydesarrolloweb", icon: "linkedin" },
     { title: "Whatsapp", href: "https://wa.me/5491170650327?text=Me%20gustaría%20consultar...", icon: "whatsapp" },
 ]
 
 ---
 
 <header class="main-header">
-    <a href="/" class="logo"><img src="/src/assets/CX.svg" alt="Logo Contenidx"></a>
+    <a href="/" class="logo"><img src={cxLogo.src} alt="Logo Contenidx"></a>
         <nav class="primary-nav">
             <ul>
                 {navLinks.map(link => (
                     <li><a href={link.href}>{link.title}</a></li>
                 ))}
-                <li><a href="/outsourcing" class="outsourcing-link">Outsourcing <i class="material-symbols-outlined">personal_injury</i></a></li>
+                <li><a href="/outsourcing" class="outsourcing-link">Outsourcing <i class="material-symbols-outlined">account_circle</i></a></li>
             </ul>
             <ul>
                 {socialLinks.map(({href, icon }) => (
@@ -37,27 +39,18 @@ const socialLinks = [
         </nav>
 </header>
 <style>
-    .primary-nav a {
-        font-family: 'Inter', sans-serif;
-        color: #fff;
-        padding: .5rem 1rem;
-        border-radius: 5px;
-        transition: all .3s ease-in-out;
-    }
-
-    @media(hover:hover) {
-        .primary-nav a:hover{
-            background-color: #ffffff33;
-        }
-    }
-    
-
     .main-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem;
+        padding: .85rem 2rem;
         background-color: #1584C2;
+        border-radius: 20px;
+        position: fixed;
+        width: calc(90% - 4rem);
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .primary-nav {
@@ -69,17 +62,46 @@ const socialLinks = [
         display: flex;
         list-style: none;
         align-items: center;
-        gap: 2rem;
+        gap: .5rem;
+        margin: 0;
     }
 
-    .primary-nav ul li a {
+    .primary-nav a {
+        font-family: 'Inter', sans-serif;
         text-decoration: none;
+        color: #fff;
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        transition: all .3s ease-in-out;
+    }
+
+    .primary-nav ul:nth-child(2) {
+        gap: 1rem;
+    }
+
+    .primary-nav ul:nth-child(2) a {
+        display: flex;
+        padding: 0rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    @media(hover:hover) {
+        .primary-nav a:hover{
+            background-color: #ffffff33;
+        }
+        .primary-nav ul:nth-child(2) a:hover{
+            background-color: transparent;
+            transform: scale(1.15);
+        }
     }
 
     .outsourcing-link {
         background: black;
         color: white;
         padding: 0.5rem 1rem;
+        gap: 0.5rem;
         border-radius: 4px;
         display: flex;
         align-items: center;
@@ -96,5 +118,11 @@ const socialLinks = [
 
     .navegador {
         display: flex;
+    }
+
+    .logo img {
+        height: 25px;
+        display: flex;
+        align-items: center;
     }
 </style>

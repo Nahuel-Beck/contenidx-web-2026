@@ -1,0 +1,61 @@
+---
+interface Props {
+    href: string;
+    text: string;
+    variant: 'primary' | 'secondary';
+    iconName: string;
+    target?: string;
+}
+
+const { href, text, variant, iconName, target  } = Astro.props;
+---
+
+<a href={href} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined} class:list={[
+    "btn", 
+    { "btn-primary": variant === 'primary' }, 
+    { "btn-secondary": variant === 'secondary' }
+    ]}>
+    {text}
+    {iconName && (
+        <span class="material-symbols-outlined icon-spacing">
+            {iconName}
+        </span>
+    )}
+</a>
+
+<style>
+    .btn{
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary{
+        background: var(--degradado-btn);
+        color: #fff;
+        transition: all .3s ease;
+    }
+
+    .btn-secondary{
+        background: transparent;
+        color: var(--color-azul);
+        border: 2px solid var(--color-azul);
+        transition: all .3s ease;
+    }
+
+    @media (hover: hover) {
+        .btn-primary:hover {
+            background: var(--color-negro);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-azul-btn-hover);
+            color: var(--color-azul);
+        }
+    }
+</style>

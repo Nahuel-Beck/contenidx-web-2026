@@ -18,3 +18,9 @@ const svg = selectedIcon ? icon(selectedIcon).html[0] : null;
 ---
 
 {svg && <span class="icon" set:html={svg} />}
+
+<style>
+    .icon {
+        color: inherit;
+    }
+</style>
