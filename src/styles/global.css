@@ -56,3 +56,8 @@ h4 {
     height: 100%;
     transition: fill 0.3s ease;
 }
+
+.description-service-ul {
+    list-style: none;
+    /* padding: 0rem; */
+}

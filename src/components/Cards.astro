@@ -1,0 +1,62 @@
+---
+//Cards.astro
+import CardService from "./CardService.astro";
+---
+<section>
+    <div>
+        <CardService 
+            title="Identidad digital organizacional"
+            description={`<ul>
+                            <li><strong>Sitio web institucional moderno y accesible</strong>, para que sus usuarios encuentren lo que buscan con facilidad y su organización proyecte confianza.</li>
+                            <li><strong>Integración Google Workspace</strong>: formularios de contacto, Sheets, documentos públicos, calendarios de eventos sincronizados, para agilizar la gestión interna y mejorar la interacción con su comunidad.</li>
+                            <li><strong>SEO técnico básico</strong>: velocidad, estructura semántica, metadatos, sitemap, schema.org (entidades), para que su sitio sea fácil de ver en buscadores y cumpla con estándares de seguridad y calidad.</li>
+                            <li><strong>Prototipo o maquetación</strong>, lo que permite visualizar la estructura y verificar la funcionalidad antes de avanzar, asegurando alineación con los objetivos de su institución.</li>
+                            <li><strong>Diseño personalizado y validación de UX</strong>, para que la navegación sea eficiente y el look and feel respete la identidad de la organización.</li>
+                        </ul>`}
+            icon="/src/assets/icons/design-icon.svg"
+            suggestion="Ideal para corporaciones, organizaciones, entidades, sociedades y federaciones."
+            number="1"
+        />
+        <CardService 
+            title="Sitio web para salud" 
+            description={`<ul>
+                            <li>Web profesional con secciones: servicios, turnos online, blog de salud, etc, para que los pacientes encuentren información clara y soliciten turnos fácilmente.</li>
+                            <li>Integraciones segura con Google: automatizaciones de recordatorios calendar, Gmail para lograr mayor eficiencia en la comunicación y reducir el ausentismo.</li>
+                            <li>Conexión con sistemas internos: (Ej: software de gestión) permitiendo centralizar las tareas y evitar duplicar tareas administrativas.</li>
+                            <li>SEO técnico especializado en salud, para que tu sitio destaque en las búsquedas del rubro y cumpla con estándares de seguridad y calidad.</li>
+                            <li>Cumplimiento de la ley de accesibilidad a la información en las páginas web, para garantizar la inclusividad y respetuosa de la normativa vigente.</li>
+                            <li>Diseño personalizado y validación de UX en prototipo interactivo, para que cada interacción sea clara, confiable y contemplativa.</li>
+                        </ul>`}
+            icon="/src/assets/icons/seo-icon.svg"
+            suggestion="Ideal para farmacias, consultorios profesionales, clínicas y sanatorios."
+            number="2"
+        />
+        <CardService
+        title="Solución digital para educación"
+        description={`<ul>
+                        <li>Sitio Web con portal de alumnos, inscripciones, eventos para que sus usuarios y estudiantes accedan fácilmente a la información institucional, se registren en actividades y se mantengan actualizados.</li>
+                        <li>Automatización educativa: como inscripciones conectadas a Sheets y generación automática de credenciales en PDF vía Drive, para ahorrar tiempo y profesionalizar la gestión operativa.</li>
+                        <li>Integración con Google Classroom o calendar, lo cual nos permite integrar contenidos, clases y recordatorios.</li>
+                        <li>Refuerzo de seguridad, para aumentar el cuidado de los datos y ofrecer un sitio seguro y confiable.</li>
+                        <li>Optimización para búsquedas en Google, con estructura técnica pensada para mejorar el posicionamiento y facilitar que potenciales estudiantes e interesados encuentren su institución.</li>
+                        <li>Diseño personalizado y validación de UX en prototipo interactivo, para que cada sección del sitio refleje tu identidad educativa y facilite la navegación.</li>
+                    </ul>`}
+        icon="/src/assets/icons/education-icon.svg"
+        suggestion="Ideal para farmacias, consultorios profesionales."
+        number="3"
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco);
+    }
+
+    div {
+        display: flex;
+        gap: 2rem;
+        margin: 0 auto;
+    }
+</style>

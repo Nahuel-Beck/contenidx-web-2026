@@ -1,0 +1,62 @@
+---
+//CardTextService.astro
+import TextService from "./TextService.astro";
+---
+<section>
+    <div class="cards-text-service">
+        <TextService 
+            serviceNumber="01"
+            titleService="Identidad web institucional"
+            detailImpression="Moderno y accesible, para que sus usuarios encuentren lo que buscan con facilidad y su organización proyecte confianza."
+            idealsActivities="Corporaciones, organizaciones, entidades, sociedades, y federaciones."
+            detailService={[
+                "Integración Google Workspace: formularios de contacto, Sheets, documentos públicos, calendarios de eventos sincronizados, para agilizar la gestión interna y mejorar la interacción con su comunidad.",
+                "SEO técnico básico: velocidad, estructura semántica, metadatos, sitemap, schema.org (entidades) para que su sitio sea fácil de ver en buscadores y cumpla con estándares de seguridad y calidad.",
+                "Prototipo o maquetación, lo que permite visualizar la estructura y verificar la funcionalidad antes de avanzar, asegurando alineación con los objetivos de su institución.",
+                "Diseño personalizado y validación de UX, para que la navegación sea eficiente y el look and feel respete la identidad de la organización."
+            ]},
+        />
+        <TextService 
+            serviceNumber="02"
+            titleService="Sitio web para salud"
+            detailImpression="Integraciones segura con Google: automatizaciones de recordatorios calendar, Gmail para lograr mayor eficiencia en la comunicación y reducir el ausentismo."
+            idealsActivities="Farmacias, consultorios profesionales, etc."
+            detailService={[
+                "Web profesional con secciones: servicios, turnos online, blog de salud, etc, para que los pacientes encuentren información clara y soliciten turnos fácilmente.",
+                "Conexión con sistemas internos: (Ej: software de gestión) permitiendo centralizar las tareas y evitar duplicar tareas administrativas.",
+                "SEO técnico especializado en salud, para que tu sitio destaque en las búsquedas del rubro y cumpla con estándares de seguridad y calidad.",
+                "Cumplimiento de la ley de accesibilidad a la información en las páginas web, para garantizar la inclusividad y respetuosa de la normativa vigente.",
+                "Diseño personalizado y validación de UX en prototipo interactivo, para que cada interacción sea clara, confiable y contemplativa."
+            ]}
+        />
+        <TextService
+                serviceNumber="03"
+                titleService="Solución digital para educación"
+                detailImpression="Sitio Web con portal de alumnos, inscripciones, eventos para que sus usuarios y estudiantes accedan fácilmente a la información institucional, se registren en actividades y se mantengan actualizados."
+                idealsActivities="Ideal para cursos, talleres, centros educativos, universidades."
+                detailService={[
+                    "Automatización educativa: como inscripciones conectadas a Sheets y generación automática de credenciales en PDF vía Drive, para ahorrar tiempo y profesionalizar la gestión operativa.",
+                    "Integración con Google Classroom o calendar, lo cual nos permite integrar contenidos, clases y recordatorios.",
+                    "Refuerzo de seguridad, para aumentar el cuidado de los datos y ofrecer un sitio seguro y confiable.",
+                    "Optimización para búsquedas en Google, con estructura técnica pensada para mejorar el posicionamiento y facilitar que potenciales estudiantes e interesados encuentren su institución.",
+                    "Diseño personalizado y validación de UX en prototipo interactivo, para que cada sección del sitio refleje tu identidad educativa y facilite la navegación."
+                ]}
+        />
+    </div>
+</section>
+<style>
+    section {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco);
+    }
+
+    .cards-text-service {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        gap: 1rem;
+        /* flex-direction: column; */
+        /* gap: 4rem; */
+        /* max-width: 1200px; */
+    }
+</style>
