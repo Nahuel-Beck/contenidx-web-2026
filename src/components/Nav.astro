@@ -1,4 +1,5 @@
 ---
+// Nav.astro
 import Index from "../pages/index.astro";
 import Icon from "./Icon.astro";
 import cxLogo from '../assets/CX.svg';
@@ -44,13 +45,15 @@ const socialLinks = [
         justify-content: space-between;
         align-items: center;
         padding: .85rem 2rem;
-        background-color: #1584C2;
+        background-color: rgba(21, 131, 194, 0.65);
+        backdrop-filter: blur(6px);
         border-radius: 20px;
         position: fixed;
         width: calc(90% - 4rem);
         top: 1rem;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 9999;
     }
 
     .primary-nav {

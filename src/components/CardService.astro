@@ -1,0 +1,55 @@
+---
+//CardService.astro
+import '../styles/global.css';
+
+const { title, description, suggestion, icon, number } = Astro.props;
+// const content = [
+//     {title},
+//     {description},
+//     {suggestion},
+//     {icon},
+//     {number}
+// ]
+---
+<div class="card-container">
+    <div class="card-service">
+        <div>
+            <p set:html={number} />
+        </div>
+        <!-- <div class="icon-service">
+            <img src={icon} alt={`Icono de ${title}`} />
+        </div> -->
+        <h3 class="title-service">{title}</h3>
+        <p class="description-service" set:html={description} />
+        <h4 class="suggestion" set:html={suggestion} />
+    </div>
+</div>
+
+<style>
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+    
+    .card-container {
+        display: flex;
+        gap: 2rem;
+        margin: 0 auto;
+        justify-content: center;
+        max-width: 1200px;
+    }
+
+    .card-service {
+        border: 1px solid var(--color-negro);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: start;
+        width: 100%;
+    }
+
+    .card-service ul li {
+        display: flex;
+        padding: 0;
+        list-style: none;
+        gap: .5rem;
+    }
+</style>

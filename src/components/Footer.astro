@@ -1,4 +1,5 @@
 ---
+//Footer.astro
 import "../styles/global.css";
 import Icon from "./Icon.astro";
 
@@ -21,8 +22,9 @@ const socialLinks = [
     <div class="content">
         <div class="block-1">
             <h4 class="text-footer">{textFooter}</h4>
-            <div>
-                <img src="/src/assets/cx-iso-description.svg" alt="Marca isologo contenidx">
+            <div class="marca-info">
+                <img src="/src/assets/marca-nombre-completo.svg" alt="Marca isologo contenidx">
+                <p>Somos una start up que desarrolla sitios webs para instituciones y organizaciones con complejidades variadas.</p>
                 <p>© 2024 Mi Sitio Web. Todos los derechos reservados.</p>
             </div>
         </div>
@@ -80,10 +82,6 @@ const socialLinks = [
         flex-direction: column;
     }
 
-    .block-1 p {
-        color: #575757;
-    }
-
     .primary-nav ul {
         display: flex;
         flex-direction: column;
@@ -105,6 +103,16 @@ const socialLinks = [
         flex-direction: column;
         align-items: start;
         justify-content: space-around;
+        max-width: 30vw;
+        text-align: start;
+    }
+
+    .block-1 p {
+        color: #575757;
+    }
+
+    .marca-info > p:first-of-type{
+        margin: 0;
     }
 
     .block-1 > div {
@@ -116,6 +124,7 @@ const socialLinks = [
 
     .block-1 > div img {
         height: 40px;
+        max-width: 130px;
     }
 
     .block-2 {
@@ -141,7 +150,6 @@ const socialLinks = [
 
     .footer-nav a {
         display: inline-block;
-        /* color: var(--color-blanco-gris); */
         color: #575757;
         text-decoration: none;
         transition: all .1s ease-in-out;
@@ -156,8 +164,8 @@ const socialLinks = [
 
     .footer-nav-social-qr {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        /* flex-direction: column; */
+        align-items: start;
         gap: 2rem;
     }
 
@@ -175,6 +183,10 @@ const socialLinks = [
         display: inline-block;
         color: #575757;
         transition: all .1s ease-in-out;
+    }
+
+    .footer-nav-social-qr img {
+        padding-left: 4rem;
     }
 
     @media (hover:hover) {
