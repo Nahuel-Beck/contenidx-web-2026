@@ -1,0 +1,90 @@
+---
+// src/pages/contacto.astro
+import Layout from '../layouts/Layout.astro'; // Ajusta según tu layout
+import '../styles/global.css'
+import Nav from '../components/Nav.astro';
+
+const url = new URL(Astro.request.url);
+const servicioSeleccionado = url.searchParams.get('servicio');
+const detalleSeleccionado = url.searchParams.get('detalle');
+
+console.log('URL completa:', Astro.request.url);
+console.log('Servicio:', servicioSeleccionado);
+console.log('Detalle:', detalleSeleccionado);
+---
+
+<Layout title="Contacto">
+    <section>
+        <p>{servicioSeleccionado}</p>
+    </section>
+    <!-- <Nav/> -->
+    <div class="contacto">
+        <h1>Contacto</h1>
+
+        {servicioSeleccionado && (
+            <div class="servicio-seleccionado">
+                <p><strong>Servicio seleccionado:</strong> {servicioSeleccionado}</p>
+                <p><strong>Detalle:</strong> {detalleSeleccionado}</p>
+            </div>
+        )}
+
+        <form>
+            <input type="hidden" name="servicio" value={servicioSeleccionado || ''} />
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu email" required />
+            <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</Layout>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        height: 100vh;
+        /* width: 100%; */
+    }
+
+    .contacto {
+        padding: 2rem;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+
+    .servicio-seleccionado {
+        background-color: blueviolet;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        color: white;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    input, textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    button {
+        padding: 1rem;
+        background-color: var(--color-azul-oscuro);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+</style>
