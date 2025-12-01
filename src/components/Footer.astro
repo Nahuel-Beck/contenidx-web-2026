@@ -23,7 +23,9 @@ const socialLinks = [
         <div class="block-1">
             <h4 class="text-footer">{textFooter}</h4>
             <div class="marca-info">
-                <img src="/src/assets/marca-nombre-completo.svg" alt="Marca isologo contenidx">
+                <a href="/">
+                    <img src="/src/assets/marca-nombre-completo.svg" alt="Marca isologo contenidx">
+                </a>
                 <p>Somos una start up que desarrolla sitios webs para instituciones y organizaciones con complejidades variadas.</p>
                 <p>© 2024 Mi Sitio Web. Todos los derechos reservados.</p>
             </div>
@@ -125,6 +127,8 @@ const socialLinks = [
     .block-1 > div img {
         height: 40px;
         max-width: 130px;
+        opacity: .55;
+        transition: all .1s ease-in-out;
     }
 
     .block-2 {
@@ -164,7 +168,6 @@ const socialLinks = [
 
     .footer-nav-social-qr {
         display: flex;
-        /* flex-direction: column; */
         align-items: start;
         gap: 2rem;
     }
@@ -193,6 +196,10 @@ const socialLinks = [
         .footer-nav-social-qr a:hover {
             color: var(--color-azul);
             transform: scale(1.2);
+        }
+        .block-1 > div img:hover {
+            transform: translateX(5px);
+            opacity: 1;
         }
     }
 </style>
