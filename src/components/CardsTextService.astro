@@ -7,6 +7,7 @@ import TextService from "./TextService.astro";
         <TextService 
             serviceNumber="01"
             titleService="Identidad web institucional"
+            slugService="identidad-web-institucional"
             detailImpression="Moderno y accesible, para que sus usuarios encuentren lo que buscan con facilidad y su organización proyecte confianza."
             idealsActivities="Corporaciones, organizaciones, entidades, sociedades, y federaciones."
             detailService={[
@@ -19,6 +20,7 @@ import TextService from "./TextService.astro";
         <TextService 
             serviceNumber="02"
             titleService="Sitio web para salud"
+            slugService="sitio-web-salud"
             detailImpression="Integraciones segura con Google: automatizaciones de recordatorios calendar, Gmail para lograr mayor eficiencia en la comunicación y reducir el ausentismo."
             idealsActivities="Farmacias, consultorios profesionales, etc."
             detailService={[
@@ -32,6 +34,7 @@ import TextService from "./TextService.astro";
         <TextService
                 serviceNumber="03"
                 titleService="Solución digital para educación"
+                slugService="solucion-digital-educacion"
                 detailImpression="Sitio Web con portal de alumnos, inscripciones, eventos para que sus usuarios y estudiantes accedan fácilmente a la información institucional, se registren en actividades y se mantengan actualizados."
                 idealsActivities="Ideal para cursos, talleres, centros educativos, universidades."
                 detailService={[
@@ -50,13 +53,18 @@ import TextService from "./TextService.astro";
         background-color: var(--color-blanco);
     }
 
-    .cards-text-service {
+    /* .cards-text-service {
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
         gap: 1rem;
-        /* flex-direction: column; */
-        /* gap: 4rem; */
-        /* max-width: 1200px; */
+    } */
+
+    .cards-text-service {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        margin: 0 auto;
+        gap: 1rem;
     }
 </style>

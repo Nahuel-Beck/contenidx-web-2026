@@ -2,7 +2,7 @@
 //TextService.astro
 import '../styles/global.css';
 
-const { serviceNumber, titleService, detailImpression, idealsActivities, detailService } = Astro.props;
+const { serviceNumber, titleService, detailImpression, idealsActivities, detailService, slugService } = Astro.props;
 
 function inspectArray<T>(value: T | T[]): T[] {
     return Array.isArray(value) ? value : [value];
@@ -12,44 +12,51 @@ const titleArray = inspectArray(titleService);
 const impressionArray = inspectArray(detailImpression);
 ---
 
-<section>
-    <div class="detailed-info">
-        {titleArray.map((titleService) => (
-        <h4>{titleService}</h4>
-        ))}
-        {impressionArray.map((detailImpression) => (
-            <p>{detailImpression}</p>
-        ))}
-    </div>
-    <div class="block-1">
-        <div class="number-service">
-            <h2>{serviceNumber}</h2>
-        </div>
-        <div class="text">
-            <h1>{titleService}</h1>
-            <!-- <div class="first-impression">
+
+<a href={`/services/${slugService}`} class="service-link" aria-lebel={`Ver detalles del servicio ${titleService}`}>
+    <section>
+        <div class="detailed-info">
+                {titleArray.map((titleService) => (
+            <h4>{titleService}</h4>
+            ))}
+            {impressionArray.map((detailImpression) => (
                 <p>{detailImpression}</p>
-            </div> -->
-            <div class="ideal">
-                <div>
-                    <span class="material-symbols-outlined">lightbulb_2</span>
-                    <h3>Ideal para</h3>
+            ))}
+        </div>
+        <div class="block-1">
+            <div class="number-service">
+                <h2>{serviceNumber}</h2>
+            </div>
+            <div class="text">
+                <h1>{titleService}</h1>
+                <!-- <div class="first-impression">
+                    <p>{detailImpression}</p>
+                </div> -->
+                <div class="ideal">
+                    <div>
+                        <span class="material-symbols-outlined">lightbulb_2</span>
+                        <h3>Ideal para</h3>
+                    </div>
+                    <p>{idealsActivities}</p>
                 </div>
-                <p>{idealsActivities}</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</a>
 
 <style>
     h1, h2, h3, h4, h5, h6, p, a, div {
         font-family: 'Rubik', sans-serif;
         color: var(--color-gris);
     }
+
+    .service-link {
+        text-decoration: none;
+        color: inherit;
+    }
     
     section {
-        width: 500px;
-        min-height: auto;
+        height: 40vh;
         position: relative;
         display: flex;
         align-items: flex-start;
@@ -100,7 +107,7 @@ const impressionArray = inspectArray(detailImpression);
     
     .text h1 {
         font-weight: 500;
-        font-size: 3rem;
+        font-size: 2.15rem;
         line-height: 2.5rem;
         letter-spacing: -2px;
         text-transform: uppercase;
@@ -169,6 +176,7 @@ const impressionArray = inspectArray(detailImpression);
 
     @media (hover: hover) {
         section:hover {
+            /* width: 30vw; */
             background: 
                 linear-gradient(var(--color-gris), var(--color-negro)) padding-box,
                 linear-gradient(to right, var(--color-violeta), var(--color-azul-oscuro)) border-box;

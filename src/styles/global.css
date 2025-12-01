@@ -20,9 +20,15 @@ body {
     --color-violeta: #D02AB1;
     --color-negro-oscuro: #1E1E1E;
     --color-gris: #5F5F5F;
+    --color-gris-blanco: #F4F4F4;
     --degradado-viol-negro: linear-gradient(35deg, #CC29C2, #303030);
     --degradado-viol-rojo: linear-gradient(35deg, #CC29C2, #E62D31);
     --degradado-btn: linear-gradient(35deg, #1584C2, #0A3F5C);
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li {
+    font-family: var(--font-rubik);
+    color: var(--color-gris);
 }
 
 h1 {
@@ -59,5 +65,4 @@ h4 {
 
 .description-service-ul {
     list-style: none;
-    /* padding: 0rem; */
 }

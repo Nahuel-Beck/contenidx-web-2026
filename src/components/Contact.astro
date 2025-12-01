@@ -1,0 +1,124 @@
+---
+// Contact.astro
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
+
+const url = new URL(Astro.request.url);
+const servicioSeleccionado = url.searchParams.get('servicio');
+const detalleSeleccionado = url.searchParams.get('detalle');
+
+console.log('URL completa:', Astro.request.url);
+console.log('Servicio:', servicioSeleccionado);
+console.log('Detalle:', detalleSeleccionado);
+---
+
+<Layout title="Contacto">
+
+    <div class="contacto">
+        <div>
+            <video src="/src/assets/Marca-CX.mp4" autoplay loop muted></video>
+        </div>
+        <form>
+            <h1>Estamos en contacto</h1>
+            <p>Vamos a darle abordaje a su proyecto.</p>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu email" required />
+            <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</Layout>
+
+<style>
+    .contacto {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin: 0 auto;
+        align-items: center;
+        background-color: #E8E8E8;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 2rem;
+        gap: 3rem;
+        margin: 5rem;
+    }
+
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    form input,
+    form textarea {
+        border: none;
+        background-color: #dfdfdf;
+    }
+
+    form input:nth-child(3) {
+        border-radius: 5px 5px 0px 0px;
+    }
+    form input:nth-child(4) {
+        border-radius: 0px;
+    }
+    form input:nth-child(5) {
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    form button {
+        margin-top: 2rem;
+    }
+
+    form textarea {
+        height: 15vh;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    form h1,
+    form p {
+        margin: 0;
+    }
+
+    form p {
+        margin: 1rem 0rem;
+    }
+
+    img {
+        width: max-content;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .contacto > div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    input, textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    button {
+        padding: 1rem;
+        background-color: var(--color-azul-oscuro);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+</style>

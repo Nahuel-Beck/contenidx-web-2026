@@ -1,9 +1,18 @@
 ---
 import Design from '../layouts/Design.astro';
 import Hero from '../components/Hero.astro';
-// import Cards from '../components/Cards.astro';
 import ListsCards from '../components/ListsCards.astro';
 import CardsTextService from '../components/CardsTextService.astro';
+
+
+
+import Layout from '../layouts/Layout.astro';
+// import CardTextService from '../components/CardTextService.astro';
+import { getAllServices } from '../data/services';
+
+// Obtenemos los servicios desde el archivo centralizado
+const services = getAllServices()
+
 ---
 
 <Design title="Inicio">

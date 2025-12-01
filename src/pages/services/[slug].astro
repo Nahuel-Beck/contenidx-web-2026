@@ -1,0 +1,88 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getServiceBySlug, getAllServices  } from "../../data/services";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Contact from "../../components/Contact.astro";
+
+export async function getStaticPaths() {
+    const servicesPath = getAllServices();
+    return servicesPath.map((servicePath) => ({
+        params: { slug: servicePath.serviceSlug },
+    }));
+}
+const { slug } = Astro.params;
+const service = getServiceBySlug(slug as string);
+
+
+if (!service) {
+    return Astro.redirect('/404');
+}
+
+const { detailService } = service;
+---
+
+<Layout title={`${detailService.title} | Contenidx`}>
+    <Nav/>
+    <main class="service-detail">
+        <div class="container">
+            <section class="hero">
+                <h1>{detailService.title}</h1>
+                <p class="lead">{detailService.description}</p>
+            </section>
+
+            <section class="section">
+                <h2>Características principales</h2>
+                <ul class="features-list">
+                    {detailService.features.map((feature) => (
+                        <li>{feature}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section class="section benefits">
+                <h2>Beneficios ?</h2>
+                <ul class="benefits-list">
+                {detailService.benefits.map((benefit) => (
+                    <li>{benefit}</li>
+                ))}
+                </ul>
+            </section>
+
+        {detailService.examples && (
+            <section class="section examples">
+                <h2>Ejemplos de aplicación</h2>
+                <ul class="examples-list">
+                    {detailService.examples.map((example) => (
+                    <li>{example}</li>
+                    ))}
+                </ul>
+            </section>
+            )}
+
+            <section>
+                <Contact/>
+            </section>
+        
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    body {
+        background-color: #F4F4F4;
+    }
+
+    .service-detail {
+        margin: 4rem 2rem 2rem;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .cta {
+        
+    }
+</style>
